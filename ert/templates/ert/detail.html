@@ -1,0 +1,27 @@
+{% extends 'ert/base.html' %}
+{% block content %}
+
+<section id="details">
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col text-center">
+			<h1>Title of post {{id}}</h1>
+			<h6 style="color: green;font-style: italic;">Author,....</h6>
+			<hr>
+			<p>
+				{{ category.name }} </br>
+				{{ category.email }} </br>
+				{{ category.hospitalname }}</br>
+			</p>
+			
+			<hr>
+				<div class="row mt-3">
+				<a href="{% url 'update' category.id %}"class="btn btn-primary">update</a>
+				<a href="{% url 'delete' category.id %}"class="btn btn-danger">delete</a>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
